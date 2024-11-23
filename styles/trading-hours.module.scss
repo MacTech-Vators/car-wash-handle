@@ -1,0 +1,36 @@
+.trading-hours-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .trading-hours-row label {
+    width: 100px;
+    font-weight: bold;
+  }
+  
+  .time-inputs {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .time-inputs input {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type='submit'] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #0056b3;
+  }
+  

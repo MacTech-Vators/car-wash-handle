@@ -1,0 +1,40 @@
+/* frontend/styles/globals.scss */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  /* Hover styles for input fields */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+input:hover {
+  border-color: #007BFF; /* Highlight border color on hover */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glowing effect */
+  transition: 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Tooltip styling for guidance */
+input:hover::after {
+  content: attr(data-hover); /* Get content from 'data-hover' attribute */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transform: translateY(-150%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+input:not(:hover)::after {
+  opacity: 0;
+}
