@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { api } from '../utils/api';
 import axios from 'axios';
+import styles from '@/styles/Form.module.scss';
 
 interface OwnerInfoProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,6 +22,7 @@ interface OwnerInfoProps {
     email_address: string;
     nacwo_joining_date: string;
   }
+  
   const ownerData: OwnerInfoProps = {
     date_of_birth: '1990-01-01',
     name_surname: 'John Doe',
@@ -114,12 +116,13 @@ const validateIdNumber = (value: string, idType: string) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Owner Information</h2>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      <h2 className={styles.header}>Owner Information</h2>
 
       {/* Name Surname */}
       <div>
         <input
+          className={styles.inputField}
           {...register("name_surname", { required: "Name is required" })}
           placeholder="Full Name(s)"
           title="Enter your full name as it appears on your ID or Passport."
@@ -128,6 +131,7 @@ const validateIdNumber = (value: string, idType: string) => {
       <br />
       <div>
       <input
+        className={styles.inputField}
           {...register("name_surname", { required: " Last Name is required" })}
           placeholder="Last Name"
           title="Enter your last name as it appears on your ID or Passport."
@@ -165,6 +169,7 @@ const validateIdNumber = (value: string, idType: string) => {
 
       <div>
        <input
+        className={styles.inputField}
           {...register("id_number", {
             required: "ID or Passport is required",
             _validate: isUsingPassport
@@ -202,6 +207,7 @@ const validateIdNumber = (value: string, idType: string) => {
 
 {/* Date of Birth */}
 <input
+  className={styles.dateFieldContainer}
     type="date"
     {...register('date_of_birth', { required: true })}
     placeholder="Date of Birth"
@@ -210,7 +216,7 @@ const validateIdNumber = (value: string, idType: string) => {
   {Error.date_of_birth && <p>Date of birth is required</p>}
 
   {/* Age Range */}
-  <select {...register('age_range', { required: true })}>
+  <select className={styles.selectField} {...register('age_range', { required: true })}>
     <option value="">Select Age Range</option>
     <option value="18-35">18-35</option>
     <option value="36-55">36-55</option>
@@ -219,7 +225,7 @@ const validateIdNumber = (value: string, idType: string) => {
   {Error.age_range && <p>Age range is required</p>}
 
   {/* Gender */}
-  <select {...register('gender', { required: true })}>
+  <select className={styles.selectField} {...register('gender', { required: true })}>
     <option value="">Select Gender</option>
     <option value="Male">Male</option>
     <option value="Female">Female</option>
@@ -230,6 +236,7 @@ const validateIdNumber = (value: string, idType: string) => {
       {/* Contact Number */}
       <div>
         <input
+          className={styles.inputField}
           {...register("contact_number", {
             required: "Contact number is required.",
             validate: validateContactNumber,
@@ -243,6 +250,7 @@ const validateIdNumber = (value: string, idType: string) => {
       {/* Email Address */}
       <div>
         <input
+          className={styles.inputField}
           {...register("email_address", {
             required: "Email is required.",
             pattern: {
@@ -258,6 +266,7 @@ const validateIdNumber = (value: string, idType: string) => {
 
        {/* NACWO Joining Date */}
   <input
+    className={styles.dateFieldContainer}
     type="date"
     {...register('nacwo_joining_date', { required: true })}
     placeholder="Joining Date"
@@ -265,7 +274,7 @@ const validateIdNumber = (value: string, idType: string) => {
   />
   {Error.nacwo_joining_date && <p>Joining date is required</p>}
 
-      <input type="submit" value="Next" />
+      <button className={styles.button} type="submit" value="Next">Next</button>
     </form>
   );
 };

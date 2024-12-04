@@ -1,0 +1,44 @@
+/* Footer.module.scss */
+.footer {
+    background-image: url('/head foot 1.png');
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+  
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease-in-out;
+  
+      &:hover {
+        color: #f39c12; /* Change to a different color on hover */
+      }
+    }
+  
+    .socialLinks {
+      margin-top: 10px;
+    }
+  
+    .contactInfo {
+      margin-top: 20px;
+      font-size: 12px;
+  
+      p {
+        margin: 5px 0;
+      }
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+  
+      img {
+        max-width: 100px;
+        height: auto;
+      }
+    }
+  }
+  
