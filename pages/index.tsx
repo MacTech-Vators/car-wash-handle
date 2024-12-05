@@ -4,6 +4,7 @@ import { useState } from 'react';
 import FormSteps from '../components/FormSteps';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import styles from '@/styles/Form.module.scss';
 
 const IndexPage = () => {
 
@@ -19,7 +20,7 @@ const IndexPage = () => {
   return (
     <div>
       <Header/>
-      <h1>Welcome to the NACWO Management System</h1>
+      <h1 className={styles.header}>Welcome to the NACWO Management System</h1>
       {/*<p>This application allows you to manage car wash information, users, and more.</p>
       <button onClick={handleStart}>Get Started</button>*/}
       <FormSteps formData={formData} setFormData={setFormData} setStep={setStep} />

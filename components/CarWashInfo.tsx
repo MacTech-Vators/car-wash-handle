@@ -139,10 +139,9 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
         </select>
       </div>
 
-      <div className="form-group">
+      <div className={styles.dateFieldContainer}>
         <label>Joining Date</label>
         <input
-          className={styles.dateFieldContainer}
           type="date"
           {...register('car_wash_joining_date', { required: 'Joining Date is required' })}
           defaultValue={formData.carWashInfo?.car_wash_joining_date || ''}

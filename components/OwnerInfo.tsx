@@ -206,15 +206,15 @@ const validateIdNumber = (value: string, idType: string) => {
       </div>
 
 {/* Date of Birth */}
+<div className={styles.dateFieldContainer}>
 <input
-  className={styles.dateFieldContainer}
     type="date"
     {...register('date_of_birth', { required: true })}
     placeholder="Date of Birth"
     data-hover="Enter a valid Date of birth as per ID number"
   />
   {Error.date_of_birth && <p>Date of birth is required</p>}
-
+  </div>
   {/* Age Range */}
   <select className={styles.selectField} {...register('age_range', { required: true })}>
     <option value="">Select Age Range</option>
@@ -234,7 +234,6 @@ const validateIdNumber = (value: string, idType: string) => {
   {Error.gender && <p>Gender is required</p>}
 
       {/* Contact Number */}
-      <div>
         <input
           className={styles.inputField}
           {...register("contact_number", {
@@ -245,7 +244,6 @@ const validateIdNumber = (value: string, idType: string) => {
           title="Enter a valid South African contact number starting with +27."
           data-hover="Provide your primary contact number."
         />
-      </div>
 
       {/* Email Address */}
       <div>
@@ -265,14 +263,16 @@ const validateIdNumber = (value: string, idType: string) => {
       </div>
 
        {/* NACWO Joining Date */}
+       <div className={styles.dateFieldContainer}>
   <input
-    className={styles.dateFieldContainer}
+    
     type="date"
     {...register('nacwo_joining_date', { required: true })}
     placeholder="Joining Date"
     data-hover="Enter a joining date."
   />
   {Error.nacwo_joining_date && <p>Joining date is required</p>}
+  </div>
 
       <button className={styles.button} type="submit" value="Next">Next</button>
     </form>

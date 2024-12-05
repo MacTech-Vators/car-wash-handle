@@ -2,6 +2,11 @@
   padding: 21px;
   max-width: 900px;
   margin: auto;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -10,6 +15,10 @@
 
   h1 {
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -17,6 +26,10 @@
   display: block;
   margin: 0 auto 21px;
   width: 150px;
+
+  @media (max-width: 768) {
+    width: 120px;
+  }
 }
 
 .ribbon {
@@ -41,6 +54,11 @@
     color: white;
     padding: 9px;
     text-align: center;
+
+    @media (max-width: 768px) {
+      padding: 6px;
+      font-size: 0.9rem;
+    }
   }
 
   td {
@@ -51,7 +69,14 @@
     border-bottom: none;
     padding: 9px;
     text-align: left;
+
+    @media (max-width: 768px) {
+      padding: 6px;
+      font-size: 0.9rem;
+    }
   }
+
+
 }
 
 .inputField {
@@ -62,6 +87,11 @@
   border: 1px solid #ccc;
   margin-bottom: 15px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 0.9rem;
+  }
 }
 
 .inputField:focus {
@@ -69,7 +99,7 @@
   border-color: #0070f3;
 }
 
-.dateFieldContainer {
+.dateFieldContainer
   input[type="date"] {
     border-radius: 9px;
     padding: 12px 15px;
@@ -83,9 +113,18 @@
       outline: none;
       border-color: #0070f3;
     }
-  }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 0.9rem;
+    }
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  
+}
 .button {
   display: block;
   margin: 21px auto;
@@ -98,9 +137,15 @@
   font-size: 1rem;
   text-align: center;
   width: 30%;
+  
 
   &:hover {
     background-color: #005bb5;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 0.9rem;
   }
 }
 
@@ -116,6 +161,15 @@
 
   label {
     margin-left: 5px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+      margin: 0;
+    }
   }
 }
 
@@ -142,6 +196,12 @@
   color: white;
   padding: 12px 15px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 9px;
+    font-size: 0.9rem;
+  }
 }
 
 .toggleButton:hover {
@@ -165,5 +225,10 @@
   &:hover {
     background-color: #005bb5;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 0.9rem;
   }
 }
