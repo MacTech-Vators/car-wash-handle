@@ -47,6 +47,7 @@ function setNextStep(_arg0: boolean) {
 */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import styles from '@/styles/Form.module.scss';
 
 type UserInfo = {
   username: string;
@@ -74,13 +75,14 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ onSubmit }) => {
   const password = watch('password');
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>User Information</h2>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      <h2 className={styles.header}>User Information</h2>
 
       {/* Username */}
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input
+          className={styles.inputField}
           id="username"
           type="text"
           {...register('username', { required: 'Username is required' })}
@@ -93,6 +95,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <label htmlFor="password">Password</label>
         <input
+          className={styles.inputField}
           id="password"
           type="password"
           {...register('password', {
@@ -108,6 +111,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <label htmlFor="confirm_password">Confirm Password</label>
         <input
+          className={styles.inputField}
           id="confirm_password"
           type="password"
           {...register('confirm_password', {
@@ -123,6 +127,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <label htmlFor="role">Role</label>
         <select
+          className={styles.selectField}
           id="role"
           {...register('role', { required: 'Role is required' })}
           defaultValue=""
@@ -141,6 +146,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
+          className={styles.inputField}
           id="email"
           type="email"
           {...register('email', {

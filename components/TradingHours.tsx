@@ -134,6 +134,7 @@ export default TradingHoursForm;
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import styles from "@/styles/Form.module.scss";
 
 interface TradingHours {
   monday: string;
@@ -186,8 +187,8 @@ const TradingHoursForm: React.FC<TradingHoursFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Trading Hours</h2>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      <h2 className={styles.header}>Trading Hours</h2>
 
       <label>Monday</label>
       <input {...register("monday")} placeholder="Monday Hours" />

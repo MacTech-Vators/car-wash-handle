@@ -46,6 +46,7 @@ function setNextStep(_arg0: boolean) {
 */
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import styles from '@/styles/Form.module.scss';
 
 
 type CarWashFormProps = {
@@ -63,12 +64,13 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
   };
 
   return (
-    <form className="car-wash-form" onSubmit={handleSubmit(onSubmit)}>
-      <h2>Car Wash Information</h2>
+    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      <h2 className={styles.header}>Car Wash Information</h2>
 
       <div className="form-group">
         <label>Car Wash Name</label>
         <input
+          className={styles.inputField}
           {...register('car_wash_name', { required: 'Car Wash Name is required' })}
           placeholder="Enter Car Wash Name"
           defaultValue={formData.carWashInfo?.car_wash_name || ''}
@@ -79,6 +81,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
       <div className="form-group">
         <label>Registration Number</label>
         <input
+        className={styles.inputField}
           {...register('registration_number', { required: 'Registration Number is required' })}
           placeholder="Enter Registration Number"
           defaultValue={formData.carWashInfo?.registration_number || ''}
@@ -89,6 +92,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
       <div className="form-group">
         <label>Physical Address</label>
         <textarea
+          className={styles.inputField}
           {...register('physical_address', { required: 'Physical Address is required' })}
           placeholder="Enter Physical Address"
           defaultValue={formData.carWashInfo?.physical_address || ''}
@@ -99,6 +103,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
       <div className="form-group">
         <label>Contact Number</label>
         <input
+          className={styles.inputField}
           {...register('contact_number', { required: 'Contact Number is required' })}
           placeholder="Enter Contact Number"
           defaultValue={formData.carWashInfo?.contact_number || ''}
@@ -109,6 +114,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
       <div className="form-group">
         <label>Operating Hours</label>
         <input
+          className={styles.inputField}
           {...register('operating_hours', { required: 'Operating Hours are required' })}
           placeholder="E.g., 9:00 AM - 6:00 PM"
           defaultValue={formData.carWashInfo?.operating_hours || ''}
@@ -119,6 +125,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
       <div className="form-group">
         <label>Services Offered</label>
         <select
+          className={styles.selectField}
           {...register('services_offered', { required: 'Select at least one service' })}
           multiple
           defaultValue={formData.carWashInfo?.services_offered || []}
@@ -132,7 +139,7 @@ const CarWashInfo: React.FC<CarWashFormProps> = ({ formData, setFormData, setSte
         </select>
       </div>
 
-      <div className="form-group">
+      <div className={styles.dateFieldContainer}>
         <label>Joining Date</label>
         <input
           type="date"
